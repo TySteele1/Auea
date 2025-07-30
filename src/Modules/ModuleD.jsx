@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { injectValidationPath } from '../engine/CIFEngine';
+import { useCIFEngine } from './hooks/useCIFEngine';
+
 
 const ModuleD = () => {
   const [input, setInput] = useState('');

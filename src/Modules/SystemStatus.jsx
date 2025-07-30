@@ -1,20 +1,19 @@
 import React from 'react';
-import telemetry from "../utils/telemetry";  // ✅ relative path
 
-
-useEffect(() => {
-  telemetry.debug('SystemStatus module mounted.', 'SystemStatus');
-}, []);
-
-const checkSystemHealth = () => {
-  telemetry.trace('System health check triggered.', 'SystemStatus');
-  // existing health logic...
-};
-
-export default function SystemStatus() {
+const SystemStatus = () => {
   return (
-    <div className="bg-gray-900 p-4 rounded-xl shadow-md">
-      <h2 className="text-xl font-bold">Status: Online ✅</h2>
+    <div style={{
+      backgroundColor: '#000',
+      color: '#0f0',
+      padding: '10px',
+      fontFamily: 'monospace',
+      textAlign: 'center',
+      borderBottom: '1px solid #0f0',
+    }}>
+      <div>Testing System Status</div>
+      <div style={{ color: 'white', fontWeight: 'bold' }}>System Online</div>
     </div>
   );
-}
+};
+
+export default SystemStatus;

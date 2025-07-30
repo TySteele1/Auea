@@ -1,10 +1,10 @@
 // src/core/SystemIntegrityLayer.js
 
 // Registry of module status report hooks
-import { reportStatus as dashboardStatus } from '../modules/Dashboard';
-import { reportStatus as adminPanelStatus } from '../modules/AdminPanel';
-import { reportStatus as moduleCStatus } from '../modules/ModuleC';
-import { reportStatus as moduleDStatus } from '../modules/ModuleD';
+import { reportStatus as dashboardStatus } from '../Modules/Dashboard';
+import { reportStatus as adminPanelStatus } from '../Modules/AdminPanel';
+import { reportStatus as moduleCStatus } from '../Modules/ModuleC';
+import { reportStatus as moduleDStatus } from '../Modules/ModuleD';
 
 // Add more modules here as needed
 

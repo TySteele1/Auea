@@ -1,9 +1,5 @@
 import { logTelemetry, TelemetryLevels } from './TelemetryHandler';
 
-useEffect(() => {
-  telemetry.info('Genesis Portal mounted.', 'GenesisPortal');
-}, []);
-
 const telemetry = {
   trace: (msg, ctx = 'System') => logTelemetry(msg, TelemetryLevels.TRACE, ctx),
   debug: (msg, ctx = 'System') => logTelemetry(msg, TelemetryLevels.DEBUG, ctx),

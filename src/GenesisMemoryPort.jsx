@@ -1,34 +1,29 @@
-import { createContext, useContext, useState, useCallback } from 'react';
+// src/GenesisMemoryPort.jsx
 
-const GenesisMemoryContext = createContext();
+import React, { createContext, useState } from 'react';
 
-export function GenesisMemoryProvider({ children }) {
-  const [memoryLog, setMemoryLog] = useState([]);
+// Create a context
+export const GenesisMemoryContext = createContext();
 
-  const appendMemory = useCallback((entry) => {
-    const timestamp = new Date().toLocaleTimeString();
-    setMemoryLog((prevLog) => [...prevLog, { entry, timestamp }]);
-  }, []);
+// Create a provider component
+export const GenesisMemoryProvider = ({ children }) => {
+  const [memory, setMemory] = useState({
+    commandHistory: [],
+    userProfile: null,
+    systemLog: [],
+    genesisStatus: 'initializing',
+  });
 
-  const clearMemory = useCallback(() => {
-    setMemoryLog([]);
-  }, []);
+  const updateMemory = (key, value) => {
+    setMemory((prev) => ({
+      ...prev,
+      [key]: value,
+    }));
+  };
 
   return (
-    <GenesisMemoryContext.Provider
-      value={{ memoryLog, appendMemory, clearMemory }}
-    >
+    <GenesisMemoryContext.Provider value={{ memory, updateMemory }}>
       {children}
     </GenesisMemoryContext.Provider>
   );
-}
-
-export function useGenesisMemoryPort() {
-  const context = useContext(GenesisMemoryContext);
-  if (!context) {
-    throw new Error(
-      'useGenesisMemoryPort must be used within a GenesisMemoryProvider'
-    );
-  }
-  return context;
-}
+};

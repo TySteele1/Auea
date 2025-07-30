@@ -1,0 +1,52 @@
+/* src/components/TelemetryPanel.css */
+
+.telemetry-panel {
+  background-color: black;
+  color: white;
+  padding: 16px;
+  font-family: monospace;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #0f0;
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
+}
+
+.telemetry-header {
+  color: #00ff00; /* green */
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.telemetry-status {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.telemetry-log-area {
+  max-height: 200px;
+  overflow-y: auto;
+  border-top: 1px solid #444;
+  padding-top: 10px;
+}
+
+.telemetry-log {
+  font-size: 0.95em;
+  margin-bottom: 5px;
+}
+
+.telemetry-log.trace,
+.telemetry-log.debug,
+.telemetry-log.info {
+  color: #00ff00; /* light green */
+}
+
+.telemetry-log.warn {
+  color: #ffff00; /* yellow */
+}
+
+.telemetry-log.error {
+  color: #ff5555; /* red */
+}
