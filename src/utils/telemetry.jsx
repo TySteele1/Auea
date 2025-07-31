@@ -1,4 +1,4 @@
-import { logTelemetry, TelemetryLevels } from './TelemetryHandler';
+import { logTelemetry, TelemetryLevels } from '../handler/TelemetryHandler';
 
 const telemetry = {
   trace: (msg, ctx = 'System') => logTelemetry(msg, TelemetryLevels.TRACE, ctx),

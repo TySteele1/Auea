@@ -1,15 +1,11 @@
-import React from 'react';
-import TelemetryPanel from './components/TelemetryPanel';
-import FileTree from './debug/FileTree';
+// src/App.jsx
+import React from "react";
+import SystemStatus from "./modules/SystemStatus";
 
-function App() {
+export default function App() {
   return (
-    <div className="app-container">
-      <h1>Debug Snapshot</h1>
-      <FileTree />
-      <TelemetryPanel />
+    <div style={{ fontFamily: "monospace", padding: "20px" }}>
+      <SystemStatus />
     </div>
   );
 }
-
-export default App;
