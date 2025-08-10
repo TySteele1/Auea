@@ -5,29 +5,48 @@ Subject: [PATCH] Aura STREAM Phase 26 completion commit
 
 diff --git a/src/components/TestForm.jsx b/src/components/TestForm.jsx
 new file mode 100644
-index 0000000..e69de29
+index 0000000..f1e2c3d
 --- /dev/null
 +++ b/src/components/TestForm.jsx
-@@ -0,0 +1,5 @@
-+// Aura STREAM Phase 26 TestForm placeholder file
+@@ -0,0 +1,45 @@
++import React, { useState } from 'react';
++
 +export default function TestForm() {
-+  return <div>Test Form Component Loaded</div>;
++  const [input, setInput] = useState('');
++  const handleSubmit = e => {
++    e.preventDefault();
++    alert(`You submitted: ${input}`);
++  };
++
++  return (
++    <form onSubmit={handleSubmit}>
++      <label htmlFor="test-input">Test Input:</label>
++      <input
++        id="test-input"
++        type="text"
++        value={input}
++        onChange={e => setInput(e.target.value)}
++      />
++      <button type="submit">Submit</button>
++    </form>
++  );
 +}
 +
 diff --git a/src/App.jsx b/src/App.jsx
-index e69de29..a4c5d2f 100644
+index 4d3e5f7..6b7c2e1 100644
 --- a/src/App.jsx
 +++ b/src/App.jsx
-@@ -1,5 +1,12 @@
+@@ -10,7 +10,15 @@
 -import React from 'react';
 +import React from 'react';
 +import TestForm from './components/TestForm';
 +
-+export default function App() {
+ export default function App() {
+-  return <div>Hello World</div>;
 +  return (
 +    <div>
 +      <h1>Aura STREAM Phase 26 Ready</h1>
 +      <TestForm />
 +    </div>
 +  );
-+}
+ }
