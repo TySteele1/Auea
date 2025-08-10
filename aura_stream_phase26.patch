@@ -41,12 +41,11 @@ index 4d3e5f7..6b7c2e1 100644
 +import React from 'react';
 +import TestForm from './components/TestForm';
 +
- export default function App() {
--  return <div>Hello World</div>;
++export default function App() {
 +  return (
 +    <div>
 +      <h1>Aura STREAM Phase 26 Ready</h1>
 +      <TestForm />
 +    </div>
 +  );
- }
++}
